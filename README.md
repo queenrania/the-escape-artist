@@ -1,0 +1,61 @@
+# The Escape Artist
+
+## The Story
+
+You are backstage at a theater before a show starts when Kiddums, the resident theater cat, escapes from the dressing room and disappears.
+
+- A show in a theater just before the audience arrives
+- A backstage crew member trying to find Kiddums
+- Kiddums gets startled and runs through the dressing rooms and backstage areas
+- The show is about to start, so there isn't much time to find him
+- The player must decide where to search and how to catch Kiddums
+- Different choices lead to different situations backstage
+- Kiddums may be caught before the show begins
+- Or Kiddums may wander onto the stage and become the star of the show
+
+**Central problem:** Find Kiddums before the show is ruined.
+
+**Goal:** Get Kiddums safely back to the green room before the curtain opens.
+
+## The Map
+
+```text
+[start]
+   |--- dressing rooms ---> [dressing-rooms]
+   |                         |--- costume trunk ---> [feather-trail]
+   |                         |--- feathers -------> [feather-trail]
+   |                         |--- treats
+   |                              |--- treats ---> [ending: ending-scene-stealer]
+   |                              |--- block stage ---> [ending: ending-curtain-up]
+   |                              |--- wanders onto stage ---> [ending: ending-chaos]
+   |
+   |--- stage manager ---> [stage-manager]
+                              |--- castle ---> [painted-castle]
+                              |                 |--- green room ---> [ending: ending-curtain-up]
+                              |                 |--- bait with toys and treats ---> [ending: ending-quiet-rescue]
+                              |
+                              |--- prop table ---> [prop-table]
+                                                    |--- veil ---> [ending: ending-quiet-rescue]
+                                                    |--- green room ---> [ending: ending-curtain-up]
+
+[feather-trail]
+   |--- under seats ---> [ending: ending-quiet-rescue]
+   |--- wait quietly --> [ending: ending-quiet-rescue]
+```
+
+## How to Play
+
+Run the game in the terminal with:
+
+```bash
+node script.js
+```
+
+Follow the numbered choices to help find Kiddums before the curtain rises.
+
+There are four possible endings:
+
+- **A Perfect Opening**
+- **The Unsung Hero**
+- **Kiddums Takes the Stage**
+- **The Cat Runs the Theater**

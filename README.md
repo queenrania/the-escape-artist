@@ -45,17 +45,6 @@ You are backstage at a theater before a show starts when Kiddums, the resident t
 
 ## How to Play
 
-Run the game in the terminal with:
+Simply follow the choices and choose how to catch Kiddums before the show starts!
 
-```bash
-node script.js
-```
-
-Follow the numbered choices to help find Kiddums before the curtain rises.
-
-There are four possible endings:
-
-- **A Perfect Opening**
-- **The Unsung Hero**
-- **Kiddums Takes the Stage**
-- **The Cat Runs the Theater**
+[**Play The Escape Artist**](https://queenrania.github.io/the-escape-artist/)

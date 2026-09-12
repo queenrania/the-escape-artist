@@ -243,6 +243,7 @@ function showScene() {
     game.appendChild(ending);
 
     const button = document.createElement("button");
+    button.className = "play-again";
     button.textContent = "Play Again";
     button.addEventListener("click", restartGame);
     game.appendChild(button);
@@ -254,7 +255,7 @@ function showScene() {
   // Choices
   scene.choices.forEach(function (choice, index) {
     const button = document.createElement("button");
-    button.textContent = (index + 1) + ". " + choice.text;
+    button.textContent = choice.text;
     button.addEventListener("click", function () {
       makeChoice(index);
     });

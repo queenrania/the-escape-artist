@@ -40,14 +40,14 @@ const storyNodes = {
     id: "start",
     text: "It is opening night at the theater, and the audience will be arriving shortly. You are backstage checking the props when you hear a loud crash from the dressing rooms and realize it's Kiddums, the theater cat, who probably got startled. You then hear his collar bell jingling somewhere behind the curtains.",
     choices: [
-      { text: "Search the dressing rooms", nextId: "dressing-rooms" },
+      { text: "Search the dressing rooms", nextId: "dressing-room" },
       { text: "Ask the stage manager for help", nextId: "stage-manager" }
     ],
     isEnding: false
   },
 
-  "dressing-rooms": {
-    id: "dressing-rooms",
+  "dressing-room": {
+    id: "dressing-room",
     text: "As you walk to the dressing room, you find costume feathers scattered across the floor and throughout the hallway. In the dressing room, you see your friend Yasmin who will be dancing in the show staring at an open costume trunk. 'I didn't do it,' she says. 'The cat did.' You hear Kiddums give a tiny meow from somewhere nearby.",
     choices: [
       { text: "Look inside the costume trunk", nextId: "costume-trunk" },
@@ -68,7 +68,6 @@ const storyNodes = {
   },
 
   "costume-trunk": {
-
     id: "costume-trunk",
     text: "You go back to the dressing room and lift the lid of the trunk and see two yellow eyes stare back at you. Kiddums is laying there on a pile of costumes. When you reach toward him, he quickly jumps out of the other side of the trunk.",
     choices: [
@@ -123,7 +122,7 @@ const storyNodes = {
     id: "under-seats",
     text: "You crawl carefully under the seats. Kiddums backs away from you until he reaches the end of the row. You finally get close enough to pick him up. Unfortunately, the audience has started taking their seats, and several people can see you crawling around underneath them with a cat.",
     choices: [
-      { text: "Carry Kiddums backstage", nextId: "ending-quiet-rescue" }
+      { text: "Carry Kiddums backstage", nextId: "ending-rescue" }
     ],
     isEnding: false
   },
@@ -132,7 +131,7 @@ const storyNodes = {
     id: "wait-quietly",
     text: "You sit on the floor and stop chasing him. For a while, nothing happens. Then Kiddums slowly walks toward you, sits beside your leg, and starts cleaning one paw. You scoop him up before he runs away.",
     choices: [
-      { text: "Take Kiddums to the green room", nextId: "ending-quiet-rescue" }
+      { text: "Take Kiddums to the green room", nextId: "ending-rescue" }
     ],
     isEnding: false
   },
@@ -141,7 +140,7 @@ const storyNodes = {
     id: "lure-kiddums",
     text: "Kiddums follows the treat into the hallway. You take another step backward and he follows again. Everything is great until someone opens the backstage door. Kiddums suddenly darts between their feet and heads straight toward the stage.",
     choices: [
-      { text: "Run after him", nextId: "ending-scene-stealer" }
+      { text: "Run after him", nextId: "ending-scene" }
     ],
     isEnding: false
   },
@@ -166,9 +165,9 @@ const storyNodes = {
 
   "toy-distraction": {
     id: "toy-distraction",
-    text: "You find a little toy mouse and slide it across the floor. Kiddums pounces immediately. He chases it away from the scenery and disappears behind a stack of storage boxes. You grab him while he is distracted.",
+    text: "You find a little toy mouse and slide it across the floor. Kiddums pounces immediately. He chases it away from the scenery and you grab him while he is distracted.",
     choices: [
-      { text: "Take him to the green room", nextId: "ending-quiet-rescue" },
+      { text: "Take him to the green room", nextId: "ending-rescue" },
       { text: "Put him in his carrier", nextId: "ending-curtain-up" }
     ],
     isEnding: false
@@ -178,8 +177,8 @@ const storyNodes = {
     id: "veil",
     text: "You lift the veil and find Kiddums sitting underneath it. He jumps onto the prop table and knocks over a few candles from the candle tray. The crash echoes through the theater just as the stage manager calls for places.",
     choices: [
-      { text: "Grab Kiddums before he reaches the stage", nextId: "ending-quiet-rescue" },
-      { text: "Follow him when he runs toward the curtain", nextId: "ending-scene-stealer" }
+      { text: "Grab Kiddums before he reaches the stage", nextId: "ending-rescue" },
+      { text: "Follow him when he runs toward the curtain", nextId: "ending-scene" }
     ],
     isEnding: false
   },
@@ -189,23 +188,23 @@ const storyNodes = {
     text: "The curtain rises right on time. Kiddums remains in the green room, the props are in place. After the first scene, you check on him. He is asleep on his blanket as if nothing happened.",
     choices: [],
     isEnding: true,
-    endingTitle: "A Perfect Opening"
+    endingTitle: "Let The Show Go On"
   },
 
-  "ending-quiet-rescue": {
-    id: "ending-quiet-rescue",
+  "ending-rescue": {
+    id: "ending-rescue",
     text: "Kiddums is safely back in the green room. You return to your position just as the first scene begins. You breathe in a sigh of relief.",
     choices: [],
     isEnding: true,
-    endingTitle: "The Unsung Hero"
+    endingTitle: "Alls Well That Ends Well"
   },
 
-  "ending-scene-stealer": {
-    id: "ending-scene-stealer",
+  "ending-scene": {
+    id: "ending-scene",
     text: "You reach the stage just as the curtain opens. Kiddums walks directly into the spotlight and sits down. The audience erupts in laughter. One of the dancers improvises by dancing around him, and somehow the scene works. Kiddums becomes the star of the show.",
     choices: [],
     isEnding: true,
-    endingTitle: "Kiddums Takes the Stage"
+    endingTitle: "Kiddums Star of the Show"
   },
 
   "ending-chaos": {
@@ -213,7 +212,7 @@ const storyNodes = {
     text: "You decide to let Kiddums wander. Five minutes later, the stage manager calls your name. Kiddums has climbed onto a piece of scenery and is refusing to come down. The opening is delayed while everyone tries to bait him down with toys and treats.",
     choices: [],
     isEnding: true,
-    endingTitle: "The Cat Runs the Theater"
+    endingTitle: "Delayed Opening Chaos"
   }
 };
 

@@ -213,7 +213,7 @@ function showScene() {
   const game = document.querySelector("#game");
   game.innerHTML = "";
 
- 
+
   // Images for each scene
   const image = document.createElement("img");
   image.src = scene.image;
@@ -248,6 +248,7 @@ function showScene() {
     button.addEventListener("click", restartGame);
     game.appendChild(button);
 
+    game.focus();
     return;
   }
 
@@ -256,11 +257,14 @@ function showScene() {
   scene.choices.forEach(function (choice, index) {
     const button = document.createElement("button");
     button.textContent = choice.text;
+    button.setAttribute("aria-label", (index + 1) + ". " + choice.text);
     button.addEventListener("click", function () {
       makeChoice(index);
     });
     game.appendChild(button);
   });
+
+  game.focus();
 
 }
 

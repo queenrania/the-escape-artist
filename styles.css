@@ -58,7 +58,6 @@ button {
   border-radius: 0.375rem;
   background: #eee;
   text-align: left;
-  line-height: 1.4;
 }
 
 button:not(.play-again)::before {
@@ -69,6 +68,15 @@ button:not(.play-again)::before {
 
 button:hover {
   background: #ddd;
+}
+
+button:focus-visible {
+  outline: 3px solid #601150;
+  outline-offset: 2px;
+}
+
+#game:focus {
+  outline: none;
 }
 
 /* Ending title */

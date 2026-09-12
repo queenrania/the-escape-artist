@@ -50,6 +50,6 @@ script.js - updated browser version with imagery
 
 ## How to Play
 
-Simply follow the choices and choose how to catch Kiddums before the show starts!
+Simply follow the choices and choose the outcome of where Kiddums lands before the show starts!
 
 [**Play The Escape Artist**](https://queenrania.github.io/the-escape-artist/)

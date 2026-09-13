@@ -209,6 +209,7 @@ const visitedScenes = [];
 // Display the current scene
 function showScene() {
 
+
   const scene = storyNodes[currentSceneId];
   const game = document.querySelector("#game");
   game.innerHTML = "";
@@ -217,7 +218,7 @@ function showScene() {
   // Images for each scene
   const image = document.createElement("img");
   image.src = scene.image;
-  image.alt = "Imagery of the described scene";
+  image.alt = ""; // left empty because the story is enough for the screen reader to understand the scene, alt text is actually distracting and redundant for screen reader users
   image.className = "scene-image";
   game.appendChild(image);
 
@@ -248,6 +249,8 @@ function showScene() {
     button.addEventListener("click", restartGame);
     game.appendChild(button);
 
+    updateBackButton();
+    updateResetButton(scene.isEnding);
     game.focus();
     return;
   }
@@ -264,8 +267,23 @@ function showScene() {
     game.appendChild(button);
   });
 
+  updateBackButton();
+  updateResetButton(scene.isEnding);
   game.focus();
+}
 
+
+// Show/hide the Back button based on history
+function updateBackButton() {
+  const backBtn = document.querySelector("#back-btn");
+  backBtn.style.display = visitedScenes.length === 0 ? "none" : "inline-block";
+}
+
+
+// Show/hide the Reset button (hidden on endings, Play Again covers it)
+function updateResetButton(isEnding) {
+  const resetBtn = document.querySelector("#reset-btn");
+  resetBtn.style.display = isEnding ? "none" : "inline-block";
 }
 
 
@@ -274,7 +292,16 @@ function makeChoice(index) {
   visitedScenes.push(currentSceneId);
   currentSceneId =
     storyNodes[currentSceneId].choices[index].nextId;
+  showScene();
+}
 
+
+// Go back to the previous scene and count
+function goBack() {
+  if (visitedScenes.length === 0) {
+    return;
+  }
+  currentSceneId = visitedScenes.pop();
   showScene();
 }
 
@@ -285,6 +312,11 @@ function restartGame() {
   visitedScenes.length = 0;
   showScene();
 }
+
+
+// Reset button
+document.querySelector("#back-btn").addEventListener("click", goBack);
+document.querySelector("#reset-btn").addEventListener("click", restartGame);
 
 
 // Start the game when the page loads
